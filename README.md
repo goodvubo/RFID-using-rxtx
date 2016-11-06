@@ -6,3 +6,5 @@ make sure to load the necessary jars and dlls during runtime in the code.
 
 I used the rxtx library here- http://rxtx.qbang.org/wiki/index.php/Main_Page
 Checkout their examples for hints.
+
+you need to set 32 bit jdk platform for this library to work.
