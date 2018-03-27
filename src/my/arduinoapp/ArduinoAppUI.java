@@ -280,13 +280,9 @@ public class ArduinoAppUI extends javax.swing.JFrame {
             String t = "";
             try {
                 while ((len = this.in.read(buffer)) > -1) {
-                    t = t.concat(new String(buffer, 0, len));
-                    if (t.length() > 8) {
-                        t = "";
-                    }
-                    //System.out.println(t.length());
-//                    con(new String(buffer, 0, len));
-                    if ((app != null) && (t.length() == 8)) {
+                    t = new String(buffer, 0, len).trim().split("\n", 2)[0];
+                    
+                    if ((app != null) && (t.getBytes("UTF-8").length == 8)) {
                         app.con(t);
                     }
 
